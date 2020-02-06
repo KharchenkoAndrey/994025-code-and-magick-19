@@ -41,8 +41,17 @@ window.renderStatistics = function (ctx, players, times) {
   var maxTime = getMaxElement(times);
 
   for (var i = 0; i < players.length; i++) {
+    var color;
+    var colorPart = (Math.random());
+    ctx.fillStyle = '#000';
     ctx.fillText(Math.floor(times[i]), CLOUD_X + PADDING + (BAR_WIDTH + BAR_GAP) * i, barHeight - (barHeight * times[i]) / maxTime + PADDING * 2 - GAP);
     ctx.fillText(players[i], CLOUD_X + PADDING + (BAR_WIDTH + BAR_GAP) * i, CLOUD_HEIGHT - FONT_GAP);
+    if (players[i] === 'Вы') {
+      color = 'red';
+    } else {
+      color = 'hsla(237, 80%, 36%, '+ colorPart + ')';
+    }
+    ctx.fillStyle = color;
     ctx.fillRect(CLOUD_X + PADDING + (BAR_WIDTH + BAR_GAP) * i, CLOUD_HEIGHT - GAP - FONT_GAP, BAR_WIDTH, (barHeight * times[i]) / maxTime * -1);
   }
 };
