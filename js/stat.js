@@ -49,7 +49,7 @@ window.renderStatistics = function (ctx, players, times) {
     if (players[i] === 'Вы') {
       color = 'red';
     } else {
-      color = 'hsla(237, 80%, 36%, '+ colorPart + ')';
+      color = 'hsla(237, 80%, 36%, ' + colorPart + ')';
     }
     ctx.fillStyle = color;
     ctx.fillRect(CLOUD_X + PADDING + (BAR_WIDTH + BAR_GAP) * i, CLOUD_HEIGHT - GAP - FONT_GAP, BAR_WIDTH, (barHeight * times[i]) / maxTime * -1);
