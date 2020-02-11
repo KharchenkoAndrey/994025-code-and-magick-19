@@ -1,7 +1,7 @@
 'use strict';
 
 var getRandom = function (arr) {
-  var random = Math.round(Math.random() * arr.length);
+  var random = Math.round(Math.random() * (arr.length - 1));
   return arr[random];
 };
 
